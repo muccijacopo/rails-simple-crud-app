@@ -1,10 +1,17 @@
 <h1>Posts</h1>
-<% @posts.each do |post| %>
-    <h3><%= post.title %></h3>
-    <p><%= post.text %></p>
-    <p><%= link_to 'Modifica articolo', edit_post_path(post) %></p>
-    <p><%= link_to 'Elimina', post_path(post), method: :delete %></p>
-    <br>
-<% end %>
+<%= link_to 'Nuovo post', new_post_path, class: 'btn btn-primary mb-3' %>
+<div class="posts-grid">
+	<% @posts.each do |post| %>
+		<div class="card">
+			<div class="card-header">
+				<h3><%= post.title %></h3>
+			</div>
+			<div class="card-body">
+				<p><%= post.text %></p>
+				<p><%= link_to 'Modifica', edit_post_path(post), class: "btn btn-success" %></p>
+				<p><%= link_to 'Elimina', post_path(post), method: :delete, class: "btn btn-danger" %></p>
+			</div>
+		</div>
+	<% end %>
+</div>
 
-<%= link_to 'Nuovo post', new_post_path %>
