@@ -1,2 +1,2 @@
 ## Rails-Basic-App
-A simple CRUD App with Ruby on Rails and Bootstrap.
+A simple CRUD App with Ruby on Rails.
